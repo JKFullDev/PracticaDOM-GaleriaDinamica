@@ -28,7 +28,7 @@ header {
 
 header>section {
     width: 100%;
-    background-color: #4e4e4e;
+    background-color: rgb(146, 146, 146);
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -55,19 +55,11 @@ header>section>img {
 
 #searchBar:focus {
     outline: none;
-    box-shadow: 0 0 6px #fd0404;
+    box-shadow: 0 0 6px rgb(253, 4, 4);
 }
 
 header>nav {
-    padding: 20px;
     background-color: #000000;
-}
-
-header nav ul {
-    display: flex;
-    justify-content: space-around;
-    gap: 20px;
-    list-style: none;
 }
 
 header nav a {
@@ -76,9 +68,34 @@ header nav a {
     transition: color 0.2s;
 }
 
-header nav a:hover {
-    color: #fd0404;
+header nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
+
+
+header nav ul li {
+    position: relative;
+    display: block;
+    display: block;
+    /* Hace que el <a> ocupe todo el <li> */
+    padding: 20px 20px;
+    /* Ajusta el espacio interno */
+    text-decoration: none;
+    color: black;
+    /* Color normal */
+    background: transparent;
+    transition: background 0.3s, color 0.3s;
+}
+
+header nav ul li:hover {
+    background-color: #fd0404;
+}
+
+
 
 main {
     display: flex;
@@ -89,8 +106,9 @@ main {
 
 /* Estilos de los filtros */
 .filters {
+    color: white;
     flex: 1;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(146, 146, 146, 0.9);
     padding: 20px;
     border-radius: 5px;
     height: fit-content;
@@ -125,7 +143,7 @@ main {
     display: grid;
     padding: 20px;
     border-radius: 5px;
-    background-color: rgba(255, 255, 255, 0.90);
+    background-color: rgba(146, 146, 146, 0.9);
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
 }
@@ -169,12 +187,17 @@ main {
 @media (max-width: 768px) {
 
     #searchBar {
-        margin-bottom: 10px
+        margin-bottom: 30px;
+        min-width: 40%;
+    }
+
+    .header-top {
+        display: flex;
+        flex-direction: column;
     }
 
     header>nav>ul {
         flex-direction: column;
-        gap: 10px;
     }
 
     main {
